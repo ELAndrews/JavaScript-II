@@ -38,27 +38,48 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
+//My higher order function
 
-function getLength(arr, cb) {
+function testWork(a, b, cb){
+  return cb(a, b);
+}
+
+function getLength(arr) {
   // getLength passes the length of the array into the callback.
+  return arr.length;
 }
 
-function last(arr, cb) {
+console.log(testWork(items, "", getLength));
+
+function last(arr) {
   // last passes the last item of the array into the callback.
+  return arr[arr.length - 1];
 }
 
-function sumNums(x, y, cb) {
+console.log(testWork(items, "", last));
+
+
+function sumNums(x, y) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return x + y;
 }
 
-function multiplyNums(x, y, cb) {
+console.log(testWork(2, 3, sumNums));
+
+function multiplyNums(x, y) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return x * y;
 }
 
-function contains(item, list, cb) {
+console.log(testWork(2, 3, multiplyNums));
+
+function contains(item, list) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return list.includes(item);
 }
+
+console.log(testWork("pen", items, contains));
 
 /* STRETCH PROBLEM */
 
