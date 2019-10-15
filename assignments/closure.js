@@ -4,6 +4,22 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function myDay (){
+  const weather = "sunny";
+  console.log(`The weather is ${weather}.`);
+  function transport() {
+    const bike = "Kawasaki Ninja";
+    console.log(`When it is ${weather}, I enjoy riding my ${bike}.`);
+    function sad() {
+      const husband = "Matt";
+      console.log(`The ${bike} belongs to ${husband}, so when it is ${weather} I have to be a pillion.`)
+    }
+    sad()
+  }
+  transport()
+}
+myDay();
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
