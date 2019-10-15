@@ -83,8 +83,17 @@ console.log(testWork("pen", items, contains));
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+const namesArray = ["Sonny", "Misty", "Samson", "Trixie", "Michael", "Marmite", "Sonny", "Bertha", "Tilly", "Thomas", "David"]
+
+function removeDuplicates(arr) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  const names = arr.filter((curr, index, arr) => {
+    return index == arr.indexOf(curr);
+  });
+
+  return names;
 }
+
+console.log(testWork(namesArray, "", removeDuplicates))
