@@ -106,5 +106,19 @@ runners.forEach((curr) => {
   }
 })
 
-
 console.log(collegeStudents);
+
+// Problem 4 // Assign personality and sort // Sebastian's code (keySorter my work)
+
+const characters = 'AB';
+const charactersLength = characters.length;
+
+runners.forEach((currentItem) => {
+  (currentItem.personality = characters.charAt(Math.floor(Math.random() * charactersLength)));
+});
+
+function keySorter (arr) {
+  return arr.sort((a, b) => (a.personality > b.personality) ? 1 : -1);
+}
+
+console.log(keySorter(runners).sort());
